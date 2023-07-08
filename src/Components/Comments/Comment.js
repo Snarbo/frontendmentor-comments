@@ -150,11 +150,11 @@ function Comment({ id, currentUser, score: initialScore, avatar, username, date,
         {isMobile && (
           <div className="flex flex-wrap justify-between items-center mt-4 gap-2">
             <div className={`comment-score flex items-center rounded-[10px] min-w-[40px] ${Classes['comment-score']}`}>
-              <button className="p-3.5 pr-5" onClick={() => handleControls('score', null, +1)}>
+              <button className="p-3.5 pr-5" onClick={() => handleControls('score', null, +1)} disabled={isCurrentUser}>
                 <img className="mx-auto" src={ImagePlus} alt="Press to up-vote the comment." width="10" height="10" />
               </button>
               <span className="text-base font-medium text-center leading-none">{score}</span>
-              <button className="p-3.5 pl-5" onClick={() => handleControls('score', null, -1)}>
+              <button className="p-3.5 pl-5" onClick={() => handleControls('score', null, -1)} disabled={isCurrentUser}>
                 <img className="mx-auto" src={ImageMinus} alt="Press to down-vote the comment." width="10" height="3" />
               </button>
             </div>
